@@ -1,0 +1,33 @@
+[project]
+name = "pdm-django"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Paul Bailey", email = "paul@neutron.studio"},
+]
+dependencies = []
+requires-python = ">=3.7"
+license = {text = "MIT"}
+
+[project.urls]
+homepage = ""
+
+[project.optional-dependencies]
+[tool]
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "yapf>=0.32.0",
+    "toml>=0.10.2",
+]
+
+[tool.pdm.scripts]
+format = "yapf -rpi -vv ."
+check_format = "yapf -rpd ."
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[project.entry-points.pdm]
+pdm_django = "pdm_django.main:reg_commands"
