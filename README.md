@@ -1,4 +1,10 @@
-# pdm-django: Django shortcuts for PDM
+# pdm-django: Django command shortcuts for PDM
+
+A plugin that gives you command shortcuts for developing with [PDM](https://pdm.fming.dev/).
+
+`pdm run python manage.py runserver` -> `pdm manage runserver`
+
+`pdm run django-admin startproject narf` -> `pdm django-admin startproject narf`
 
 ## Install
 
