@@ -22,6 +22,7 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+publish = "pdm publish --username pizzapanther"
 format = "yapf -rpi -vv ."
 check_format = "yapf -rpd ."
 
