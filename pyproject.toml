@@ -1,6 +1,6 @@
 [project]
 name = "pdm-django"
-version = "0.1.0"
+version = "0.2.0"
 description = "pdm shortcuts for Django projects"
 authors = [
     {name = "Paul Bailey", email = "paul@neutron.studio"},
@@ -8,6 +8,7 @@ authors = [
 dependencies = []
 requires-python = ">=3.7"
 license = {text = "MIT"}
+readme = "README.md"
 
 [project.urls]
 homepage = "https://github.com/neutron-sync/pdm-django"
