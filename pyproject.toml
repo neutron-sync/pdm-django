@@ -1,6 +1,6 @@
 [project]
 name = "pdm-django"
-version = "0.2.0"
+version = "0.3.0"
 description = "pdm shortcuts for Django projects"
 authors = [
     {name = "Paul Bailey", email = "paul@neutron.studio"},
