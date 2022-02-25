@@ -5,6 +5,8 @@ import sys
 from pdm.cli.utils import PdmFormatter
 from pdm.cli.commands.base import BaseCommand
 from pdm.cli.commands.run import Command as RunCommand
+from pdm.cli.commands.run import TaskRunner
+from pdm.cli.utils import check_project_file
 
 
 class DjangoRunCommand(RunCommand):
@@ -21,17 +23,12 @@ class DjangoRunCommand(RunCommand):
   def handle(self, project, options):
     options.list = False
     options.site_packages = False
-    options.command = 'django'
-    super().handle(project, options)
+    options.command = self.COMMAND_PREFIX[0]
 
-  @classmethod
-  def _run_command(cls, project, args, **kwargs):
-    # remove dummy command
-    args.pop(0)
-
-    # add real command
-    args = cls.COMMAND_PREFIX + args
-    return RunCommand._run_command(project, args, **kwargs)
+    check_project_file(project)
+    runner = TaskRunner(project)
+    runner.global_options.update({"site_packages": options.site_packages})
+    sys.exit(runner.run(options.command, self.COMMAND_PREFIX[1:] + options.args))
 
 
 class ManageCommand(DjangoRunCommand):
