@@ -24,7 +24,6 @@ dev = [
 
 [tool.pdm.scripts]
 _.env_file = ".env"
-publish = "pdm publish --username __token__ --password $PDM_PUBLISH_PASSWORD"
 format = "yapf -rpi -vv ."
 check_format = "yapf -rpd ."
 
