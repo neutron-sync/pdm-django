@@ -18,6 +18,12 @@ class DjangoRunCommand(RunCommand):
   def add_arguments(self, parser):
     skip_option.add_to_parser(parser)
     parser.add_argument(
+      "-s",
+      "--site-packages",
+      action="store_true",
+      help="Load site-packages from the selected interpreter",
+    )
+    parser.add_argument(
       "args",
       nargs=argparse.REMAINDER,
       help="Arguments that will be passed to the command",
@@ -25,7 +31,6 @@ class DjangoRunCommand(RunCommand):
 
   def handle(self, project, options):
     options.list = False
-    options.site_packages = False
     options.command = self.COMMAND_PREFIX[0]
 
     check_project_file(project)

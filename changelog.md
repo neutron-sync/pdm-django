@@ -1,5 +1,9 @@
 # Changlog
 
+## [0.5.2] - 2022-08-08
+### Added
+- Support `--site-packages`
+
 ## [0.5.1] - 2022-08-08
 ### Fixed
 - skip option fixed
