@@ -6,6 +6,10 @@ A plugin that gives you command shortcuts for developing with [PDM](https://pdm.
 
 `pdm run django-admin startproject narf` -> `pdm django-admin startproject narf`
 
+## Requirements
+
+Tested with PDM 2.1.X
+
 ## Install
 
 `pdm plugin add pdm-django`
