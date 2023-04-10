@@ -7,7 +7,6 @@ from pdm.cli.commands.base import BaseCommand
 from pdm.cli.commands.run import Command as RunCommand
 from pdm.cli.commands.run import TaskRunner
 from pdm.cli.hooks import HookManager
-from pdm.cli.options import skip_option
 from pdm.cli.utils import check_project_file
 
 
@@ -16,7 +15,6 @@ class DjangoRunCommand(RunCommand):
   COMMAND_PREFIX = []
 
   def add_arguments(self, parser):
-    skip_option.add_to_parser(parser)
     parser.add_argument(
       "-s",
       "--site-packages",
